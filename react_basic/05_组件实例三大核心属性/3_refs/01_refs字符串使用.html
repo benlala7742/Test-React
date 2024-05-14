@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test"></div>
+
+    <!-- 引入react核心库 -->
+    <script src="../../js/react.development.js"></script>
+    <!-- 引入react-dom, 用于支持react操作DOM -->
+    <script src="../../js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转化为js -->
+    <script src="../../js/babel.min.js"></script>
+
+    <script type="text/babel"> /*此处一定要写text/babel*/
+        // 1.创建类式组件
+        class MyComponent extends React.Component {
+            showData = ()=>{
+                const {input} = this.refs
+                alert(input.value)
+            }
+            render(){
+                return (
+                    <div>
+                        <input type="text" ref="input"/>
+                        <button onClick={this.showData}>点我</button>    
+                    </div>
+                )
+            }
+        }
+        // 2.渲染虚拟DOM到页面上
+        ReactDOM.render(<MyComponent/>,document.getElementById("test"))
+
+    </script>
+</body>
+</html>

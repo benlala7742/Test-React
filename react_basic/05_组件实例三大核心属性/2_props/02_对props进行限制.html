@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+
+    <!-- 引入react核心库 -->
+    <script src="../../js/react.development.js"></script>
+    <!-- 引入react-dom, 用于支持react操作DOM -->
+    <script src="../../js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转化为js -->
+    <script src="../../js/babel.min.js"></script>
+    <!-- 引入prop-types -->
+    <script src="../../js/prop-types.js"></script>
+
+    <script type="text/babel"> /*此处一定要写text/babel*/
+        // 1.创建类式组件
+        class Person extends React.Component {
+            render(){
+                console.log(this);
+                const {name,sex,age} = this.props
+                return (
+                    <ul>
+                        <li>姓名：{name}</li>
+                        <li>性别：{sex}</li>
+                        <li>年龄：{age}</li>
+                    </ul>
+                )
+            }
+        }
+
+        Person.propTypes = {
+            name: PropTypes.string.isRequired,
+            sex: PropTypes.string,
+            age: PropsTypes.number
+        }
+
+        Person.defaultProps = {
+            sex: "未知"
+        }
+        // 2.渲染虚拟DOM到页面上
+        ReactDOM.render(<Person name="张三" sex="男" age={10}/>,document.getElementById("test1"))
+        ReactDOM.render(<Person name="李四" age={20}/>,document.getElementById("test2"))
+        const p = {name:"王五",sex:"男",age:30}
+        ReactDOM.render(<Person {...p}/>,document.getElementById("test3"))
+    </script>
+</body>
+</html>
