@@ -21,15 +21,13 @@ export default class Message extends Component {
                 {
                     this.state.messageArr.map((messageObj)=>{
                         return (<li key={messageObj.id}>
-                                    <Link to={{pathname:"/about/message",state:{id:messageObj.id,title:messageObj.title}}}>{messageObj.title}</Link>
-                                    {/* search参数   <Link to={`/about/message/?id=${messageObj.id}&title=${messageObj.title}`}>{messageObj.title}</Link> */}
+                                    <Link to={`/about/message/${messageObj.id}/${messageObj.title}`}>{messageObj.title}</Link>
                                 </li>)
                     })
                 }
             </ul>
             <div>
-              {/* search和state的路由接收都是一样的，直接接收 */}
-                <Route path="/about/message/" component={Detail}/>
+                <Route path="/about/message/:id/:title" component={Detail}/>
             </div>
       </div>
     )

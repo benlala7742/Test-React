@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 export default class Detail extends Component {
 
     state = {
@@ -10,17 +11,16 @@ export default class Detail extends Component {
     }
 
   render() {
-    console.log("111",this.props);
-    // const {id,title} = qs.parse(this.props.location.search.slice(1))
-    // const resultObj = this.state.detailArr.find((detailObj)=>{
-    //     return detailObj.id === id
-    // })
+    const {id,title} = this.props.match.params
+    const resultObj = this.state.detailArr.find((detailObj)=>{
+        return detailObj.id === id
+    })
     return (
       <div>
         <ul>
-            <li>ID: </li>
-            <li>Title: </li>
-            <li>Content: </li>
+            <li>ID: {id}</li>
+            <li>Title: {title}</li>
+            <li>Content: {resultObj.detail}</li>
         </ul>
       </div>
     )
