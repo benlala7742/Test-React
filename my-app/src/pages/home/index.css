@@ -1,0 +1,80 @@
+.user-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+.user-info div {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+.login-info p {
+    line-height: 28px;
+    font-size: 14px;
+    color: #999999;
+}
+
+.login-info p span {
+    color: #666;
+    margin-left: 60px;
+}
+
+.number {
+    display: flex;
+    margin-left: 20px;
+    flex-wrap: wrap;
+}
+
+.number .ant-card {
+    width: 33%
+}
+
+.number .ant-card-body {
+    display: flex;
+    padding: 10px 25px;
+}
+
+.number .icon {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 85px;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.number .anticon {
+    font-size: 30px;
+}
+
+.number .detail {
+    margin-left: 15px;
+}
+
+.number .detail .value {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.number .detail .name {
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+}
+
+.graph {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+}
