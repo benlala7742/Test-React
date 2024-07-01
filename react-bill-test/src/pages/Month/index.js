@@ -10,6 +10,7 @@ import DailyBill from './components/DayBill'
 const Month = () => {
   // 按月做数据的分组
   const billList = useSelector(state => state.bill.billList)
+  // useMemo类似计算属性，来对数据进行二次处理
   const monthGroup = useMemo(() => {
     // return出去计算之后的值
     return _.groupBy(billList, (item) => dayjs(item.date).format('YYYY-MM'))
@@ -28,6 +29,7 @@ const Month = () => {
 
   const monthResult = useMemo(() => {
     // 支出  /  收入  / 结余
+    // console.log("current",currentMonthList);
     const pay = currentMonthList.filter(item => item.type === 'pay').reduce((a, c) => a + c.money, 0)
     const income = currentMonthList.filter(item => item.type === 'income').reduce((a, c) => a + c.money, 0)
     return {
@@ -51,10 +53,10 @@ const Month = () => {
   const onConfirm = (date) => {
     setDateVisible(false)
     // 其他逻辑
-    console.log(date)
+    // console.log(date)
     const formatDate = dayjs(date).format('YYYY-MM')
-    console.log(formatDate)
-    setMonthList(monthGroup[formatDate])
+    // console.log(formatDate)
+    setMonthList(monthGroup[formatDate] || [])
     setCurrentDate(formatDate)
   }
 

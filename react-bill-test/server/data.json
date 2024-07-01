@@ -97,6 +97,26 @@
       "date": "2023-02-28T16:00:00.000Z",
       "useFor": "salary",
       "id": 21
+    },
+    {
+      "type": "pay",
+      "money": -100,
+      "useFor": "food",
+      "id": 22
+    },
+    {
+      "type": "income",
+      "money": 1000,
+      "date": "2024-05-31T16:00:00.000Z",
+      "useFor": "",
+      "id": 23
+    },
+    {
+      "type": "pay",
+      "money": -10,
+      "date": "2024-05-31T16:00:00.000Z",
+      "useFor": "taxi",
+      "id": 24
     }
   ]
 }
